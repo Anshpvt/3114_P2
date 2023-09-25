@@ -40,15 +40,17 @@ public class SemSearch {
         if (args.length != 2)
         {
         	System.out.println("invalid inputs");
-        	System.exit(0);
         }
-        int worldSize = Integer.parseInt(args[0]);
-        double worldPower = Math.log10(worldSize)/Math.log10(2);
-        if (Math.floor(worldPower) == Math.ceil(worldPower))//checks if first digit is a power of 2
+        else
         {
-        	System.out.println("com called");
-        	CommandProcessor com = new CommandProcessor(Integer.parseInt(args[0]), args[1]);
+        	int worldSize = Integer.parseInt(args[0]);
+            double worldPower = Math.log10(worldSize)/Math.log10(2);
+            if (Math.floor(worldPower) == Math.ceil(worldPower))//checks if first digit is a power of 2
+            {
+            	CommandProcessor com = new CommandProcessor(Integer.parseInt(args[0]), args[1]);
+            }
+            else System.out.println("invalid world size");
         }
-        else System.out.println("invalid world size");
+        
     }
 }
