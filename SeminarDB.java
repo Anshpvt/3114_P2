@@ -40,6 +40,7 @@ public class SeminarDB {
     private BST bstKey;
     private BinTree locationTree;
     private int worldSize;
+    private boolean idIn;
 
     /**
      * Constructs a new SeminarDB with specified memory size and hash size.
@@ -57,17 +58,34 @@ public class SeminarDB {
     	bstKey = new BST("root", rootSem, false);
     	
     	this.worldSize = worldSize;
+    	idIn = false;
     }
 
     public boolean IdInsert(String key, Seminar sem)
     {
-    	if(bstId.insert(key, sem))
+    	if(sem.x() * sem.y() <= worldSize && sem.x() * sem.y() > 0)
     	{
-    		return true;
+    		if(bstId.insert(key, sem))
+        	{
+        		System.out.println("Successfully inserted record with ID " + key);
+                System.out.println(sem.toString());
+                idIn = true;
+        		return true;
+        	}
+        	System.out.println("Insert FAILED - There is already a record with ID " + key);
+        	return false;
     	}
+    	System.out.println("Insert FAILED - Bad x, y coordinates: " + 
+            	sem.x() + "," + sem.y());
     	return false;
-    	
     }
+    	
+    
+//    public void IdPrint(String key, Seminar sem)
+//    {
+//    	System.out.println("This tree is empty");
+//    	
+//    }
     
     public int getIdNodeCount()
     {
