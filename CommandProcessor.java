@@ -104,6 +104,7 @@ public class CommandProcessor {
 
                     case "delete":
                         id = scanner.nextInt();
+                        System.out.println("delete called:\n");
 //                        
                         break;
 
@@ -112,40 +113,50 @@ public class CommandProcessor {
                         String key = scanner.next();
                         
                         if (type.equals("location")) {
+                        	System.out.println("Location Searched:\n");
 //                            
                         }
-                        else if (type.equals("ID")) {
-//                            
-                        }
-                        else if (type.equals("date")) {
-//                          
-                        }
-                        else if (type.equals("keyword")) {
-//                          
-                        }
-                        else if (type.equals("cost")) {
-//                          
-                        }
+//                        else if (type.equals("ID")) {
+//                        	System.out.println("ID Searched:\n");
+////                            
+//                        }
+//                        else if (type.equals("date")) {
+//                        	System.out.println("Date Searched:\n");
+////                          
+//                        }
+//                        else if (type.equals("keyword")) {
+//                        	System.out.println("Keyword Searched:\n");
+////                          
+//                        }
+//                        else if (type.equals("cost")) {
+//                        	System.out.println("Cost Searched:\n");
+////                          
+//                        }
 //                        
                         break;
 
                     case "print":
                         String printWhich = scanner.next();
-                        if (printWhich.equals("location")) {
-//                            
-                        }
-                        else if (printWhich.equals("ID")) {
+//                        if (printWhich.equals("location")) {
+//                        	System.out.println("Location Tree:\n");
+////                            
+//                        }
+                        if (printWhich.equals("ID")) {
+                        	System.out.println("ID Tree:\n");
 //                            
                         }
                         else if (printWhich.equals("date")) {
+                        	System.out.println("Date Tree:\n");
 //                          
                         }
                         else if (printWhich.equals("keyword")) {
+                        	System.out.println("Keyword Tree:\n");
 //                          
                         }
-                        else if (printWhich.equals("cost")) {
-//                          
-                        }
+//                        else if (printWhich.equals("cost")) {
+//                        	System.out.println("Cost Tree:\n");
+////                          
+//                        }
                         break;
 
                     default:
