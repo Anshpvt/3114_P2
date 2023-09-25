@@ -22,7 +22,6 @@ public class BST{
         root = insertRec(root, key, seminar);
         if (ogCount < nodeCount) // Check if a new node was added
         {
-            System.out.println("smthg was inserted");
             return true;
         }
         else
