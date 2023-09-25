@@ -5,23 +5,15 @@ import student.TestCase;
  * @version {Put Something Here}
  */
 public class SemSearchTest extends TestCase {
+	
+	private SemSearch semSearch;
     /**
      * Sets up the tests that follow. In general, used for initialization
      */
     public void setUp() {
-        // Nothing here
+        semSearch = new SemSearch();
     }
 
-
-    /**
-     * Get code coverage of the class declaration.
-     */
-    public void testMInitx()
-    {
-        SemSearch sem = new SemSearch();
-        assertNotNull(sem);
-        SemSearch.main(null);
-    }
 
     /**
      * Test with the first argument not being a power of 2.
@@ -38,11 +30,20 @@ public class SemSearchTest extends TestCase {
      * Test with the first argument being a power of 2 and valid second argument.
      */
     public void testMainValidArgs() {
-        String[] args = {"4", "someString"};
+        String[] args = {"4", "empty.txt"};
         SemSearch.main(args);
-        // assert the output, it should be "com called"
-        String expected = "com called\n";
+        
+        assertEquals("", systemOut().getHistory());
+    }
+    
+    /**
+     * Test with the first argument not being a power of 2.
+     */
+    public void testMainInvalidInputs() {
+        String[] args = {"4", "someString", "uh oh"};
+        SemSearch.main(args);
+        // assert the output, it should be "invalid world size"
+        String expected = "invalid inputs\n";
         assertEquals(expected, systemOut().getHistory());
     }
 }
-
