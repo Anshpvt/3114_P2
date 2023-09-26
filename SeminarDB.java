@@ -81,11 +81,9 @@ public class SeminarDB {
     }
     	
     
-//    public void IdPrint(String key, Seminar sem)
-//    {
-//    	System.out.println("This tree is empty");
-//    	
-//    }
+    public void IdPrint(String key, Seminar seminar){
+        System.out.println("This tree is empty");
+        }
     
     public int getIdNodeCount()
     {
